@@ -6,6 +6,7 @@ namespace Address_Book_Application
 {
     class Person
     {
+
         string firstName;
         string lastName;
         string address;
@@ -14,6 +15,7 @@ namespace Address_Book_Application
         string zip;
         string phoneNo;
         public Person(string firstName, string lastName, string address, string city, string state, string zip, string phoneNo)
+
         {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -23,6 +25,7 @@ namespace Address_Book_Application
             this.zip = zip;
             this.phoneNo = phoneNo;
         }
+
         public string getFirstName() 
         {
             return this.firstName;
@@ -68,6 +71,7 @@ namespace Address_Book_Application
             return this.phoneNo;
         }
         public void setPhoneNo(string phoneNo)
+
         {
             this.phoneNo = phoneNo;
         }
