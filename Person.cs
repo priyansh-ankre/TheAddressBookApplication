@@ -6,14 +6,16 @@ namespace Address_Book_Application
 {
     class Person
     {
-        String firstName;
-        String lastName;
-        String address;
-        String city;
-        String state;
-        int zip;
-        String phoneNo;
-        public Person(String firstName, String lastName, String address, String city, String state, int zip, String phoneNo)
+
+        string firstName;
+        string lastName;
+        string address;
+        string city;
+        string state;
+        string zip;
+        string phoneNo;
+        public Person(string firstName, string lastName, string address, string city, string state, string zip, string phoneNo)
+
         {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -23,51 +25,53 @@ namespace Address_Book_Application
             this.zip = zip;
             this.phoneNo = phoneNo;
         }
-        public String getFirstName() 
+
+        public string getFirstName() 
         {
             return this.firstName;
         }
-        public String getLastName()
+        public string getLastName()
         {
             return this.lastName;
         }
-        public String getAddress() 
+        public string getAddress() 
         {
             return this.address;
         }
-        public void SetAddress(String address)
+        public void SetAddress(string address)
         {
             this.address = address;
         }
-        public String getState()
+        public string getState()
         {
             return this.state;
         }
-        public void setState(String state)
+        public void setState(string state)
         {
             this.state = state;
         }
-        public String getCity()
+        public string getCity()
         {
             return this.city;
         }
-        public void setCity(String city)
+        public void setCity(string city)
         {
             this.city = city;
         }
-        public int getzip()
+        public string getzip()
         {
             return this.zip;
         }
-        public void setZip(int zip)
+        public void setZip(string zip)
         {
             this.zip = zip;
         }
-        public String getPhoneNo()
+        public string getPhoneNo()
         {
             return this.phoneNo;
         }
-        public void setPhoneNo(String phoneNo)
+        public void setPhoneNo(string phoneNo)
+
         {
             this.phoneNo = phoneNo;
         }
