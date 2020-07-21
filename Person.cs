@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,16 +6,14 @@ namespace Address_Book_Application
 {
     class Person
     {
-
         string firstName;
         string lastName;
         string address;
         string city;
         string state;
         string zip;
-        string phoneNo;
-        public Person(string firstName, string lastName, string address, string city, string state, string zip, string phoneNo)
-
+        string phoneNumber;
+        public Person(string firstName, string lastName, string address, string city, string state, string zip, string phoneNumber)
         {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -23,9 +21,8 @@ namespace Address_Book_Application
             this.address = city;
             this.state = state;
             this.zip = zip;
-            this.phoneNo = phoneNo;
+            this.phoneNumber = phoneNumber;
         }
-
         public string getFirstName() 
         {
             return this.firstName;
@@ -38,7 +35,7 @@ namespace Address_Book_Application
         {
             return this.address;
         }
-        public void SetAddress(string address)
+        public void setAddress(string address)
         {
             this.address = address;
         }
@@ -66,14 +63,13 @@ namespace Address_Book_Application
         {
             this.zip = zip;
         }
-        public string getPhoneNo()
+        public string getPhoneNumber()
         {
-            return this.phoneNo;
+            return this.phoneNumber;
         }
-        public void setPhoneNo(string phoneNo)
-
+        public void setPhoneNumber(string phoneNumber)
         {
-            this.phoneNo = phoneNo;
+            this.phoneNumber = phoneNumber;
         }
     }
 }
