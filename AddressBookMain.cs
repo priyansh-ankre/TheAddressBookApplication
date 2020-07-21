@@ -6,6 +6,14 @@ namespace Address_Book_Application
     class AddressBookMain
     {
         List<Person> personsList = new List<Person>();
+        Dictionary<string, Person>cityMap;
+        Dictionary<string, Person> stateMap;
+        
+        public AddressBookMain()
+        {
+            cityMap = new Dictionary<string, Person>();
+            stateMap = new Dictionary<string, Person>();
+        }
 
         public void addPerson()
         {
@@ -45,6 +53,8 @@ namespace Address_Book_Application
                 return;
             }
             personsList.Add(person1);
+            cityMap.Add(city,person1);
+            stateMap.Add(state, person1);
         }
         public Person getObjectWithName(string firstName)
         {
@@ -172,6 +182,21 @@ namespace Address_Book_Application
                 return x.getzip().CompareTo(y.getzip());
             });
         }
+        public void viewByCity()
+        {
+            Console.WriteLine("enter city");
+            string city = Console.ReadLine();
+            Console.WriteLine(city);
+            Console.WriteLine(cityMap.GetValueOrDefault(city));
+        }
+        public void viewByState()
+        {
+            Console.WriteLine("enter state");
+            string state = Console.ReadLine();
+            Console.WriteLine(state);
+            Console.WriteLine(cityMap.GetValueOrDefault(state));
+        }
+
         public static void Main(string[] args)
         {
             int quit = 0;
@@ -186,7 +211,9 @@ namespace Address_Book_Application
                 Console.WriteLine("enter 6 to sort address book by city");
                 Console.WriteLine("enter 7 to sort address book by state");
                 Console.WriteLine("enter 8 to sort address book by zip");
-                Console.WriteLine("enter 9 to quit");
+                Console.WriteLine("enter 9 to view person by city");
+                Console.WriteLine("enter 9 to view person by state");
+                Console.WriteLine("enter 11 to quit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine(option);
                 
@@ -219,6 +246,12 @@ namespace Address_Book_Application
                         addressBook.sortByZip();
                         break;
                     case 9:
+                        addressBook.viewByCity();
+                        break;
+                    case 10:
+                        addressBook.viewByState();
+                        break;
+                    case 11:
                         quit = 1;
                         break;
                 }
