@@ -27,6 +27,19 @@ namespace Address_Book_Application
             Person person1 = new Person(firstName, lastName, address, city, state, zip, phoneNumber);
             personsList.Add(person1);
         }
+        public Person getObjectWithName()
+        {
+            Console.WriteLine("enter first name of person ");
+            String firstName = Console.ReadLine();
+            foreach (Person person in personsList)
+            {
+                if (person.getFirstName().Equals(firstName))
+                {
+                    return person;
+                }
+            }
+            return null;
+        }
 
         public void editperson()
         {
@@ -93,6 +106,12 @@ namespace Address_Book_Application
                 Console.WriteLine(person);
             }
         }
+        public void deletePerson()
+        {
+            Person personToDelete = getObjectWithName();
+            personsList.Remove(personToDelete);
+        }
+
 
         public static void main(String[] args)
         {
