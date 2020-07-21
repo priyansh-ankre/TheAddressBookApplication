@@ -71,5 +71,9 @@ namespace Address_Book_Application
         {
             this.phoneNumber = phoneNumber;
         }
+        public string toString()
+        {
+            return firstName + ", " + lastName + ", " + address + ", " + city + ", " + state + ", " + zip + ", " + phoneNumber;
+        }
     }
 }

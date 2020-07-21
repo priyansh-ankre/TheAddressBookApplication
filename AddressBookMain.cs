@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 
 namespace Address_Book_Application
 {
@@ -11,26 +10,44 @@ namespace Address_Book_Application
         public void addPerson()
         {
             Console.WriteLine("enter first name");
-            String firstName = Console.ReadLine();
+            string firstName = Console.ReadLine();
+            Console.WriteLine(firstName);
+
             Console.WriteLine("enter last name");
-            String lastName = Console.ReadLine();
+            string lastName = Console.ReadLine();
+            Console.WriteLine(lastName);
+
             Console.WriteLine("enter address");
-            String address = Console.ReadLine();
+            string address = Console.ReadLine();
+            Console.WriteLine(address);
+
             Console.WriteLine("enter city");
-            String city = Console.ReadLine();
+            string city = Console.ReadLine();
+            Console.WriteLine(city);
+
             Console.WriteLine("enter state");
-            String state = Console.ReadLine();
+            string state = Console.ReadLine();
+            Console.WriteLine(state);
+
             Console.WriteLine("enter zip");
-            String zip = Console.ReadLine();
+            string zip = Console.ReadLine();
+            Console.WriteLine(zip);
+
             Console.WriteLine("enter phone number");
-            String phoneNumber = Console.ReadLine();
+            string phoneNumber = Console.ReadLine();
+            Console.WriteLine(phoneNumber);
+
             Person person1 = new Person(firstName, lastName, address, city, state, zip, phoneNumber);
+            Person duplicate = getObjectWithName(firstName);
+            if (person1.Equals(duplicate))
+            {
+                Console.WriteLine("there already exists person  with same name in address book");
+                return;
+            }
             personsList.Add(person1);
         }
-        public Person getObjectWithName()
+        public Person getObjectWithName(string firstName)
         {
-            Console.WriteLine("enter first name of person ");
-            String firstName = Console.ReadLine();
             foreach (Person person in personsList)
             {
                 if (person.getFirstName().Equals(firstName))
@@ -38,14 +55,15 @@ namespace Address_Book_Application
                     return person;
                 }
             }
-            return null;
+            return new Person("", "", "", "", "", "", "");
         }
-
         public void editperson()
         {
             Person personToEdit = new Person("", "", "", "", "", "", "");
             Console.WriteLine("enter first name of person to edit");
-            String firstName = Console.ReadLine();
+            string firstName = Console.ReadLine();
+            Console.WriteLine(firstName);
+
             foreach (Person person in personsList)
             {
                 if (person.getFirstName().Equals(firstName))
@@ -68,27 +86,37 @@ namespace Address_Book_Application
                 {
                     case 1:
                         Console.WriteLine("enter new address");
-                        String address = Console.ReadLine();
+                        string address = Console.ReadLine();
+                        Console.WriteLine(address);
+
                         personToEdit.setAddress(address);
                         break;
                     case 2:
                         Console.WriteLine("enter new city");
-                        String city = Console.ReadLine();
+                        string city = Console.ReadLine();
+                        Console.WriteLine(city);
+
                         personToEdit.setCity(city);
                         break;
                     case 3:
                         Console.WriteLine("enter new state");
-                        String state = Console.ReadLine();
+                        string state = Console.ReadLine();
+                        Console.WriteLine(state);
+
                         personToEdit.setState(state);
                         break;
                     case 4:
                         Console.WriteLine("enter new zip");
-                        String zip = Console.ReadLine();
+                        string zip = Console.ReadLine();
+                        Console.WriteLine(zip);
+
                         personToEdit.setZip(zip);
                         break;
                     case 5:
                         Console.WriteLine("enter new phone number");
-                        String phoneNumber = Console.ReadLine();
+                        string phoneNumber = Console.ReadLine();
+                        Console.WriteLine(phoneNumber);
+
                         personToEdit.setPhoneNumber(phoneNumber);
                         break;
                     case 6:
@@ -108,12 +136,15 @@ namespace Address_Book_Application
         }
         public void deletePerson()
         {
-            Person personToDelete = getObjectWithName();
+            Console.WriteLine("enter first name of person ");
+            string firstName = Console.ReadLine();
+            Console.WriteLine(firstName);
+
+            Person personToDelete = getObjectWithName(firstName);
             personsList.Remove(personToDelete);
         }
 
-
-        public static void main(String[] args)
+        public static void Main(string[] args)
         {
             int quit = 0;
             AddressBookMain addressBook = new AddressBookMain();
@@ -121,8 +152,10 @@ namespace Address_Book_Application
             {
                 Console.WriteLine("enter 1 for adding person to address book");
                 Console.WriteLine("enter 2 for editing person");
-                Console.WriteLine("enter 3 to quit");
+                Console.WriteLine("enter 3 for deleting person");
+                Console.WriteLine("enter 4 to quit");
                 int option = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(option);
 
                 switch (option)
                 {
@@ -134,6 +167,10 @@ namespace Address_Book_Application
                         addressBook.editperson();
                         break;
                     case 3:
+                        addressBook.displayAddressBook();
+                        addressBook.deletePerson();
+                        break;
+                    case 4:
                         quit = 1;
                         break;
                 }
