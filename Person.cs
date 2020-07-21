@@ -28,7 +28,7 @@ namespace Address_Book_Application
         {
             return this.firstName.CompareTo(person.firstName);
         }
-     
+        
         public string getFirstName() 
         {
             return firstName;
