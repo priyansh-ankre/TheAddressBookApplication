@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,8 +12,13 @@ namespace Address_Book_Application
         string city;
         string state;
         string zip;
+<<<<<<< HEAD
         string phoneNo;
         public Person(string firstName, string lastName, string address, string city, string state, string zip, string phoneNo)
+=======
+        string phoneNumber;
+        public Person(string firstName, string lastName, string address, string city, string state, string zip, string phoneNumber)
+>>>>>>> 264c3219a9dea84285c72b8b8b03fc8a6283a0d2
         {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -21,7 +26,7 @@ namespace Address_Book_Application
             this.address = city;
             this.state = state;
             this.zip = zip;
-            this.phoneNo = phoneNo;
+            this.phoneNumber = phoneNumber;
         }
         public string getFirstName() 
         {
@@ -35,7 +40,11 @@ namespace Address_Book_Application
         {
             return this.address;
         }
+<<<<<<< HEAD
         public void SetAddress(string address)
+=======
+        public void setAddress(string address)
+>>>>>>> 264c3219a9dea84285c72b8b8b03fc8a6283a0d2
         {
             this.address = address;
         }
@@ -63,13 +72,21 @@ namespace Address_Book_Application
         {
             this.zip = zip;
         }
+<<<<<<< HEAD
         public string getPhoneNo()
+=======
+        public string getPhoneNumber()
+>>>>>>> 264c3219a9dea84285c72b8b8b03fc8a6283a0d2
         {
-            return this.phoneNo;
+            return this.phoneNumber;
         }
+<<<<<<< HEAD
         public void setPhoneNo(string phoneNo)
+=======
+        public void setPhoneNumber(string phoneNumber)
+>>>>>>> 264c3219a9dea84285c72b8b8b03fc8a6283a0d2
         {
-            this.phoneNo = phoneNo;
+            this.phoneNumber = phoneNumber;
         }
     }
 }
