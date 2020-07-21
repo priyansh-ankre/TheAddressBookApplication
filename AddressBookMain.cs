@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Address_Book_Application
 {
     class AddressBookMain
     {
-        private ArrayList personsList = new ArrayList();
+        List<Person> personsList = new List<Person>();
 
         public void addPerson()
         {
@@ -143,6 +144,14 @@ namespace Address_Book_Application
             Person personToDelete = getObjectWithName(firstName);
             personsList.Remove(personToDelete);
         }
+        public void sortByName()
+        {
+            personsList.Sort();
+            foreach (var srt in personsList)
+            {
+                Console.WriteLine(srt.getFirstName());
+            }
+        }
 
         public static void Main(string[] args)
         {
@@ -153,10 +162,12 @@ namespace Address_Book_Application
                 Console.WriteLine("enter 1 for adding person to address book");
                 Console.WriteLine("enter 2 for editing person");
                 Console.WriteLine("enter 3 for deleting person");
-                Console.WriteLine("enter 4 to quit");
+                Console.WriteLine("enter 4 to display address book");
+                Console.WriteLine("ener 5 to sort address book by name");
+                Console.WriteLine("enter 6 to quit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine(option);
-
+                
                 switch (option)
                 {
                     case 1:
@@ -171,6 +182,13 @@ namespace Address_Book_Application
                         addressBook.deletePerson();
                         break;
                     case 4:
+                        addressBook.displayAddressBook();
+                        break;
+                    case 5:
+                        //Collections.sort(addressBook.personsList);
+                        addressBook.sortByName();
+                        break;
+                    case 6:
                         quit = 1;
                         break;
                 }

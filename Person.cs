@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Address_Book_Application
 {
-    class Person
+    public class Person : IComparable<Person>
     {
         string firstName;
         string lastName;
@@ -23,17 +24,22 @@ namespace Address_Book_Application
             this.zip = zip;
             this.phoneNumber = phoneNumber;
         }
+        public int CompareTo(Person person)
+        {
+            return this.firstName.CompareTo(person.firstName);
+        }
+     
         public string getFirstName() 
         {
-            return this.firstName;
+            return firstName;
         }
         public string getLastName()
         {
-            return this.lastName;
+            return lastName;
         }
         public string getAddress() 
         {
-            return this.address;
+            return address;
         }
         public void setAddress(string address)
         {
@@ -41,7 +47,7 @@ namespace Address_Book_Application
         }
         public string getState()
         {
-            return this.state;
+            return state;
         }
         public void setState(string state)
         {
@@ -57,7 +63,7 @@ namespace Address_Book_Application
         }
         public string getzip()
         {
-            return this.zip;
+            return zip;
         }
         public void setZip(string zip)
         {
@@ -65,7 +71,7 @@ namespace Address_Book_Application
         }
         public string getPhoneNumber()
         {
-            return this.phoneNumber;
+            return phoneNumber;
         }
         public void setPhoneNumber(string phoneNumber)
         {
